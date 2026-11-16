@@ -27,7 +27,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install --legacy-peer-deps
+          npm config set legacy-peer-deps true
+          npm install
           npm install @tailwindcss/oxide-linux-x64-gnu --no-save
 
       - name: Build web app
