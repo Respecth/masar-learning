@@ -34,11 +34,14 @@ jobs:
       - name: Build web app
         run: npm run build
 
-      - name: Add Capacitor Android
-        run: npx cap add android
+      - name: Verify Capacitor Core Version
+        run: npm ls @capacitor/core
 
-      - name: Install Capacitor Android package
-        run: npm install
+      - name: Install Capacitor Android Package
+        run: npm install @capacitor/android
+
+      - name: Add Capacitor Android Platform
+        run: npx cap add android
 
       - name: Sync Capacitor
         run: npx cap sync android
